@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container weather-container">
+    <h1>Weather App</h1>
+</div>
+<div class="container weather-container">
+    <form method="POST" action="/">
+        <div class="form-group">
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter city name" value="{{ city }}">
+            <button type="submit" class="btn btn-primary" id="btn">Check!</button>
+        </div>
+        <div class="form-check" id="radio-group">
+            <div class="form-check form-check-inline">
+                <label for="" class="form-check-label">Celcius</label>
+                <input type="radio" class="form-check input" name="temp" value="Celcius" id="celcius-radio">
+            </div>
+            <div class="form-check form-check-inline">
+                <label for="" class="form-check-label">Fahrenheit</label>
+                <input type="radio" class="form-check input" name="temp" value="Fahrenheit" id="fahrenheit-radio">
+            </div>
+            <div class="form-check form-check-inline">
+                <label for="" class="form-check-label">Kelvin</label>
+                <input type="radio" class="form-check input" name="temp" value="Kelvin" id="kelvin-radio">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container weather-container weather-info" id="weather-info">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Invalid City</h5>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    
